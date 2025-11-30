@@ -8,16 +8,21 @@ import javax.swing.JOptionPane;
 
 public class ProgramacionJnGrupo8 {
     public static void main(String[] args) {
+        
         Inventario inventario = new Inventario(10);
-
+        GestionClientes gestionClientes = new GestionClientes();
+        GestionVentas gestionVentas = new GestionVentas(inventario, gestionClientes);
+        
         int opcion = 0;
 
-        while (opcion != 3) {
+        while (opcion != 5) {
             opcion = Integer.parseInt(JOptionPane.showInputDialog(
-                    "MENÚ DE INVENTARIO\n"
+                    "MENÚ PRINCIPAL\n"
                   + "1. Agregar producto\n"
                   + "2. Mostrar inventario\n"
-                  + "3. Salir\n"
+                  + "3. Gestión de clientes\n"
+                  + "4. Gestión de ventas\n"
+                  + "5. Salir\n"
                   + "Seleccione una opción:"
             ));
 
@@ -35,6 +40,13 @@ public class ProgramacionJnGrupo8 {
 
             if (opcion == 2) {
                 JOptionPane.showMessageDialog(null, inventario.mostrarInventario());
+            }
+            if (opcion == 3) {
+                gestionClientes.menuClientes();
+            }
+
+            if (opcion == 4) {
+                gestionVentas.menuVentas();
             }
         }
 

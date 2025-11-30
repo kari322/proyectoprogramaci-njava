@@ -9,7 +9,7 @@ package com.mycompany.programacionjngrupo8;
  * @author pablo
  */
 public class Inventario {
- Producto[] productos;
+    Producto[] productos;
     int contador;
 
     public Inventario(int tamaño) {
@@ -28,5 +28,14 @@ public class Inventario {
             texto += productos[i].mostrarProducto() + "\n";
         }
         return texto;
+    }
+    
+    public Producto buscarProducto(int id) {
+    for (int i = 0; i < contador; i++) {
+        if (productos[i].idProducto == id) {
+            return productos[i];
+        }
+    }
+    return null;
     }
 }

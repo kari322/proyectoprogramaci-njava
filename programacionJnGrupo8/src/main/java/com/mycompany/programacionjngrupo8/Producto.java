@@ -9,7 +9,7 @@ package com.mycompany.programacionjngrupo8;
  * @author pablo
  */
 public class Producto {
-int idProducto;
+    int idProducto;
     String nombre;
     double precio;
     int cantidad;
